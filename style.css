@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --bg-color: #0d0d0d;
+  --bg-second: #141414;
+  --cyan: #00e5ff;
+  --white: #ffffff;
+  --text: #e0e0e0;
+  --text-muted: #888888;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: var( --font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-track{
+    background:var( --bg-color) ;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--cyan);
+    border-radius: 3px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 6%;
+    background-color: rgba(13, 13, 13, 0.9);
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 999;
+     border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+}
+.logo{
+    font-family: var(--font-head);
+    font-size:1.5rem ;
+    font-weight: 800;
+    color: var(--white) ;
+}
+nav ul{
+    list-style: none;
+    display:flex;
+    gap: 2rem;
+}
+nav ul a{
+    color: var(--text);
+    text-decoration:none ;
+    font-size:0.95rem ;
+    font-weight: 500;
+    transition:color 0.3s ease ;
+
+}
+nav ul a:hover {
+  color: var(--cyan);
+}
+#home{
+    min-height: 100hv;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 6% 4rem;
+    gap: 2rem;
+}
+.htext{
+    max-width: 560px;
+}
+.htext p:first-child {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.htext h1{
+font-family: var(--font-head);
+font-size: 3.5rem;
+font-weight: 750;
+color: var(--white);
+line-height: 1.1;
+margin-bottom: 1.2rem;
+}
+.htext h2{
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight:600;
+    color:var(--white) ;
+    margin-bottom:1.2rem ;
+}
+.htext p:last-of-type{
+    color: var(--text-muted);
+  margin-bottom: 1.8rem;
+}
+.himage img{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 3px solid var(--cyan);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.3); 
+
+}
+.hsocial{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.hsocial a{
+    color:var(--cyan);
+    text-decoration:none; 
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    border-radius: 50px;
+  padding: 0.4rem 0.8rem;
+  transition: all 0.3s ease;
+}
+.hsocial a:hover{
+     background: var(--cyan);
+  color: #000;
+}
