@@ -46,6 +46,11 @@ nav{
     z-index: 999;
      border-bottom: 1px solid rgba(0, 229, 255, 0.1);
 }
+nav {
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
 .logo{
     font-family: var(--font-head);
     font-size:1.5rem ;
@@ -426,7 +431,7 @@ display: block;
 
 }
 #contact form{
-    max-width: 700;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     margin:0 auto;
@@ -506,11 +511,12 @@ footer{
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-nav.scrolled {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  background-color: rgba(13, 13, 13, 0.98);
+#navber .scrolled {
+  
+  background-color: #000;   /* clear change */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
-#navLinks.open {
+#navlinks.open {
   display: flex !important;
   flex-direction: column;
   position: absolute;
@@ -523,7 +529,7 @@ nav.scrolled {
   border-bottom: 1px solid rgba(0, 229, 255, 0.1);
 }
 
-/* Hamburger active হলে X আকার */
+
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -534,4 +540,10 @@ nav.scrolled {
 
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+#typed{
+  color:var(--cyan);
+  border-right: 2px solid var(--cyan);
+  padding-right: 4px;
+  animation: blink 0.7s step-end infinite;
 }
