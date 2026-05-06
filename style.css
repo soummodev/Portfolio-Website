@@ -46,10 +46,10 @@ nav{
     z-index: 999;
      border-bottom: 1px solid rgba(0, 229, 255, 0.1);
 }
-nav {
+/* nav {
   background-color: transparent;
   transition: all 0.3s ease;
-}
+} */
 
 .logo{
     font-family: var(--font-head);
@@ -131,7 +131,7 @@ nav ul a.active {
 }
 .htext h1{
 font-family: var(--font-head);
-font-size: 3.5rem;
+font-size:  clamp(2rem, 5vw, 3.5rem);
 font-weight: 750;
 color: var(--white);
 line-height: 1.1;
@@ -139,7 +139,7 @@ margin-bottom: 1.2rem;
 }
 .htext h2{
     font-family: var(--font-head);
-    font-size: 1.6rem;
+    font-size:  clamp(1.1rem, 2.5vw, 1.6rem);
     font-weight:600;
     color:var(--white) ;
     margin-bottom:1.2rem ;
@@ -240,7 +240,7 @@ gap: 8px;
 #about h2{
     font-family: var( --font-head);
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
     color:var(--white) ;
     margin-bottom: 0.3rem;
 }
@@ -288,7 +288,7 @@ gap: 8px;
 }
 #services h2{
     font-family: var(--font-head);
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
     font-weight: 800;
     margin-bottom: 3rem;
     color:var(--white) ;
@@ -360,7 +360,7 @@ gap: 8px;
 }
 #portfolio h2 {
   font-family: var(--font-head);
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
   font-weight: 800;
   color: var(--white);
   text-align: center;
@@ -430,7 +430,7 @@ display: block;
 }
 #contact h2{
     font-family: var(--font-head);
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
     font-weight: 600;
     color: var(--white);
     text-align: center;
@@ -587,4 +587,181 @@ footer{
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+
+  nav ul {
+    gap: 1.5rem;
+  }
+    .htext h1 {
+    font-size: 2.8rem;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+
+  .hamburger {
+    display: flex;
+  }
+
+ 
+  nav ul {
+    display: none;
+  }
+
+  #home {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 9rem;
+    gap: 3rem;
+  }
+
+ 
+  .htext {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .htext p:last-of-type {
+    max-width: 500px;
+  }
+
+ 
+  .social {
+    justify-content: center;
+  }
+
+ 
+  #about {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+
+  .stext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stext p {
+    text-align: center;
+  }
+
+ 
+  .hex {
+    width: 220px !important;
+    height: 244px !important;
+  }
+.simage {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .sgard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .pgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  nav {
+    padding: 1rem 5%;
+  }
+
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+
+  #home {
+    padding: 7rem 5% 3rem;
+  }
+.simage {
+  margin-left: 170px;
+  margin-right: 100px;
+}
+  
+  .htext h1 {
+    font-size: 2.2rem;
+  }
+
+  .htext h2 {
+    font-size: 1.2rem;
+  }
+ 
+  .hex {
+    width: 180px !important;
+    height: 200px !important;
+  }
+  #about {
+    padding: 4rem 5%;
+  }
+  .stext h2 {
+    font-size: 2rem;
+  }
+  .sgard {
+    grid-template-columns: 1fr;
+  }
+  #services {
+    padding: 4rem 5%;
+  }
+  .pgrid {
+    grid-template-columns: 1fr;
+  }
+
+  #portfolio {
+    padding: 4rem 5%;
+  }
+
+ 
+  #contact {
+    padding: 4rem 5%;
+  }
+
+ 
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  /* Button পুরো প্রস্থ */
+  #cform button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  #services h2,
+  #portfolio h2,
+  #contact h2,
+  .stext h2 {
+    font-size: 1.8rem;
+  }
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media (hover: none) {
+  .portfolio-item {
+    transform: none !important;
+  }
 }
