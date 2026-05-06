@@ -104,39 +104,67 @@ function type() {
   setTimeout(type, speed);
 }
 type();
-const observer = new IntersectionObserver(callback, options);
-observer.observe(element);
+
 const revelelement = document.querySelectorAll(
   '.htext, .himage,.simage, .stext,.scard, .pitem, .form, #cform '
 );
-// Debugging: Log selected elements
-console.log('Selected elements:', revelelement);
 
-revelelement.forEach(function (el) {
-  console.log('Observing element:', el);
-  revealobserver.observe(el);
-});
 
-const revealobserver = new IntersectionObserver(
-  function (entries) {
-    entries.forEach(function (entry, index) {
-      console.log('Intersection entry:', entry);
+revelelement.forEach((el) => el.classList.add("reveal"));
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        console.log('Element is intersecting:', entry.target);
-        setTimeout(function () {
+        setTimeout(() => {
           entry.target.classList.add("visible");
-          console.log('Added visible class to:', entry.target);
-        }, index * 100);
+        }, i * 80);
       }
     });
   },
-
-  {
-    threshold: 0.1,
-  }
+  { threshold: 0.12 },
 );
-revelelement.forEach(function (el) {
-   revealobserver.observe(el);
+
+revelelement.forEach((el) => revealObserver.observe(el));
+
+
+const portfolio = document.querySelectorAll('.pitem')
+portfolio.forEach(function (item) {
+  item.addEventListener('mousemove', function (e) {
+    const rect = item.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.width
+     const tiltX = (x - 0.5) * 15;
+    const tiltY = (y - 0.5) * 15;
+     item.style.transform =
+       "perspective(600px) " +
+       "rotateY(" +
+       tiltX +
+       "deg) " +
+       "rotateX(" +
+       -tiltY +
+       "deg) " +
+       "scale(1.04)";
+  })
+    item.addEventListener("mouseleave", function () {
+      item.style.transform = "";
+    });
 })
 
 
+const contact = document.getElementById('cform')
+contact.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const submitbtn = contact.querySelector('button[type="submit"]');
+    submitbtn.innerHTML = 'Sent! <i class="fas fa-check"></i>';
+    submitbtn.style.background = "#00c48c";
+    submitbtn.style.color = "#fff";
+  submitbtn.disabled = true;
+    setTimeout(function () {
+      submitbtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+      submitbtn.style.background = "";
+      submitbtn.style.color = "";
+      submitbtn.disabled = false;
+      contact.reset(); 
+    }, 3000);
+})
